@@ -7,6 +7,7 @@ public class JudgeUtils extends MiraiPrjApplication {
 
 	// 定数
 	public static final int AGE = 17;
+	public static final int AGE_kakin = 18;
 
 	/**
 	 * 課金対象か判定するメソッド<br>
@@ -26,7 +27,7 @@ public class JudgeUtils extends MiraiPrjApplication {
 		// 現在の年月日のみをセット
 		compareCal.set(curYear, curMonth, curDate);
 		// 年からプレイ可能年齢を引く
-		compareCal.add(Calendar.YEAR, -AGE);
+		compareCal.add(Calendar.YEAR, -AGE_kakin);
 
 		// 生年月日を設定
 		Calendar birthCal = Calendar.getInstance();
@@ -67,8 +68,6 @@ public class JudgeUtils extends MiraiPrjApplication {
 		// 判定処理開始
 		// 比較用年月日よりあとの生年月日なら不可
 		if (birthCal.compareTo(compareCal) > 0) {
-			
-			
 			return false;
 		}
 		return true;
